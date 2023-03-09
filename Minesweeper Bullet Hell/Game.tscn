@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GrassTile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SelectionTile.png" type="Texture" id=4]
+[ext_resource path="res://Enemy1.tscn" type="PackedScene" id=5]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+size = Vector2( 22, 16 )
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 528, 288 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Enemy1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 288, 96 )
+speed = 100.0
+time_delay = 0.1
+type = 2
