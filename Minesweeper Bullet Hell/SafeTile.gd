@@ -2,7 +2,7 @@ extends "res://Tile.gd"
 
 var value = 0
 
-onready var number_label = $Label
+@onready var number_label = $Label
 
 func _ready():
 	pass

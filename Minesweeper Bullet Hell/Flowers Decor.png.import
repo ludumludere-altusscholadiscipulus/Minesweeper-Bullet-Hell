@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clm7yp4s2k6ss"
-path="res://.godot/imported/BetterGrassTypes.png-820c2b21d5d19e9a029c2752d0b817a2.ctex"
+uid="uid://bagwe5qt3w647"
+path="res://.godot/imported/Flowers Decor.png-d0a8fb25af5077f50a5cf25bde430b65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BetterGrassTypes.png"
-dest_files=["res://.godot/imported/BetterGrassTypes.png-820c2b21d5d19e9a029c2752d0b817a2.ctex"]
+source_file="res://Flowers Decor.png"
+dest_files=["res://.godot/imported/Flowers Decor.png-d0a8fb25af5077f50a5cf25bde430b65.ctex"]
 
 [params]
 

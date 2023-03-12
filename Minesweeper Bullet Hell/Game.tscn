@@ -1,28 +1,29 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://0vt8l0wsn6q7"]
 
-[ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GrassTile.tscn" type="PackedScene" id=3]
-[ext_resource path="res://SelectionTile.png" type="Texture" id=4]
-[ext_resource path="res://Enemy1.tscn" type="PackedScene" id=5]
+[ext_resource type="Script" path="res://Game.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://byucxos6chrca" path="res://Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dw2ndws4t35jg" path="res://GrassTile.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://ddt76fxwjkdef" path="res://SelectionTile.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://deccibl4wryhy" path="res://Enemy1.tscn" id="5"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource( 1 )
-size = Vector2( 22, 16 )
+script = ExtResource("1")
+size = Vector2(22, 16)
 
 [node name="Tiles" type="Node2D" parent="."]
 
-[node name="TileMap" parent="." instance=ExtResource( 3 )]
+[node name="TileMap" parent="." instance=ExtResource("3")]
+layer_1/z_index = 1
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 528, 288 )
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector2(528, 288)
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 4 )
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4")
 centered = false
 
-[node name="Enemy1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 288, 96 )
-speed = 100.0
-time_delay = 0.1
-type = 2
+[node name="Enemy1" parent="." instance=ExtResource("5")]
+position = Vector2(100, 108)
+type = 1
+time_delay = 0.2
+speed = 50.0

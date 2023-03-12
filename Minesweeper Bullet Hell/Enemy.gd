@@ -1,23 +1,22 @@
-extends KinematicBody2D
-class_name enemy
+extends CharacterBody2D
 
-export (int) var health = 3
-export (PackedScene) var bullet_instance
-export (float) var speed = 5
+@export var health := 3
+@export var bullet_instance : PackedScene
+@export var speed : float = 5
 
-onready var delay_shoot = $Timer
-onready var bullet_spawn = $Positions
+@onready var delay_shoot = $Timer
+@onready var bullet_spawn = $Positions
 
 func _ready():
-	delay_shoot.connect("timeout",self,"shoot")
+	delay_shoot.connect("timeout",Callable(self,"shoot"))
 
 func _physics_process(delta):
-	if health == 0:
-		queue_free()
+	if health <= 0:
+		self.queue_free()
 
 func shoot():
 	for child in bullet_spawn.get_children():
-		var obj = bullet_instance.instance()
+		var obj = bullet_instance.instantiate()
 		obj.global_position = child.global_position
 		obj.global_rotation = child.global_rotation
 		get_parent().add_child(obj)
@@ -25,5 +24,5 @@ func shoot():
 func take_damage():
 	health -= 1
 	modulate = Color(7,7,7)
-	yield(get_tree().create_timer(0.1),"timeout")
-	modulate = Color.white
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color.WHITE

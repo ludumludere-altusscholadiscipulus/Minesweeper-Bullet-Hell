@@ -1,7 +1,7 @@
 extends Area2D
 class_name tile
 
-onready var flag = $Flag
+@onready var flag = $Flag
 var marked := false
 var open := false
 

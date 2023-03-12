@@ -1,6 +1,6 @@
 extends Area2D
 
-const speed = 9
+const speed = 3
 
 @onready var visibility = $VisibleOnScreenNotifier2D
 
